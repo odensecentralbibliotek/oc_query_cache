@@ -1,0 +1,8 @@
+<?php
+/**
+* Implements flush_caches
+*/
+function cachedemo_flush_caches() {
+  return array('cache_ting_query');
+}
+

@@ -1,0 +1,6 @@
+name = oc_query_cache
+description = Creates neccesary tables and logic for handling query caching from the data well.
+core = 7.x
+package = Ding!
+
+

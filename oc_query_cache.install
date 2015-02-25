@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implementation of hook_install().
+ */
+function oc_query_cache_install() {}
+/**
+ * Implementation of hook_uninstall().
+ */
+function oc_query_cache_uninstall() {}
+/**
+* Implements hook_schema
+*/
+function oc_query_cache_schema() {
+    // Create new cache table using core cache schema
+    $schema = array();
+    $schema['cache_ting_query'] = drupal_get_schema_unprocessed('system', 'cache');
+    $schema['cache_ting_query']['description'] = 'Cache bin for the query responses from the data well'; 
+    return $schema;
+}
