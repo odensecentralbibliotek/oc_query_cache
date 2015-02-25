@@ -1,8 +1,20 @@
 <?php
 /**
-* Implements flush_caches
-*/
-function cachedemo_flush_caches() {
+* Implements flush_caches , one should be carefull as search times
+ * will increase dramaticly if the query cache is cleared. 
+ */
+function oc_query_cache_flush_caches() {
   return array('cache_ting_query');
 }
-
+function oc_query_cache_admin_menu_cache_info()
+{
+    $caches['oc_query_cache'] = array(
+      'title' => 'Query Cache',
+      'callback' => 'oc_query_cache_admin_menu_flush_cache',
+    );
+    return $caches;
+}
+function oc_query_cache_admin_menu_flush_cache($name = NULL)
+{
+    cache_clear_all('*', 'cache_ting_query', TRUE);
+}
