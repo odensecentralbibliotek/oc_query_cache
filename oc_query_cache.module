@@ -2,10 +2,11 @@
 /**
 * Implements flush_caches , one should be carefull as search times
  * will increase dramaticly if the query cache is cleared. 
- */
 function oc_query_cache_flush_caches() {
   return array('cache_ting_query');
 }
+ *
+ */
 function oc_query_cache_admin_menu_cache_info()
 {
     $caches['oc_query_cache'] = array(
